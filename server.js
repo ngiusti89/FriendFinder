@@ -1,5 +1,6 @@
 // dependencies
 var express = require("express");
+var path = require('path');
 
 // initialitze app & set port
 var app = express();
