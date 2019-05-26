@@ -1,6 +1,3 @@
-// dependency
-var path = require("path");
-
 // import friends data
 var friends = require('../data/friends.js');
 
@@ -12,7 +9,6 @@ module.exports = function (app) {
     });
 
     app.post('/api/friends', function (req, res) {
-
         var newFriendData = req.body;
         var newFriendScore = newFriendData.scores;
         var matchName = '';
@@ -25,22 +21,17 @@ module.exports = function (app) {
                 scoreDiff += Math.abs(friends[i].scores[j] - newFriendScore[j])
             }
             // console.log('scoreDiff = ' + scoreDiff);
-
             if (scoreDiff < totalDifference) {
                 // console.log('Closest match found = ' + scoreDiff);
-                // console.log('Friend name = ' + friends[i].name);
-                
+                // console.log('Friend name = ' + friends[i].name);       
                 totalDifference = scoreDiff;
                 matchName = friends[i].name;
                 matchImage = friends[i].photo;
             }
         }
-
+        
         friends.push(newFriendData);
-
         res.json({status: 'OK', matchName: matchName, matchImage: matchImage});
-
         // console.log('newFriend = ' + JSON.stringify(newFriendData));
-
     });
 };

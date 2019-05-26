@@ -34,7 +34,7 @@
         <div class="container">
             <h2>Questions:</h2>
             <br>
-            <h5>One</h5>
+            <h5>I am known to talk a lot.</h5>
             <select data-placeholder="" class="chosen-select" id="q1">
                 <option value="">Choose an option</option>
                 <option value="1">1 - Strongly Disagree</option>
@@ -44,7 +44,7 @@
                 <option value="5">5 - Strongly Agree</option>
             </select>
             <br><br>
-            <h5>Two</h5>
+            <h5>I can stay cool under pressure.</h5>
             <select data-placeholder="" class="chosen-select" id="q2">
                 <option value="">Choose an option</option>
                 <option value="1">1 - Strongly Disagree</option>
@@ -54,7 +54,7 @@
                 <option value="5">5 - Strongly Agree</option>
             </select>
             <br><br>
-            <h5>Three</h5>
+            <h5>My loved ones are very important to me.</h5>
             <select data-placeholder="" class="chosen-select" id="q3">
                 <option value="">Choose an option</option>
                 <option value="1">1 - Strongly Disagree</option>
@@ -64,7 +64,7 @@
                 <option value="5">5 - Strongly Agree</option>
             </select>
             <br><br>
-            <h5>Four</h5>
+            <h5>I can easily see things from others perspectives.</h5>
             <select data-placeholder="" class="chosen-select" id="q4">
                 <option value="">Choose an option</option>
                 <option value="1">1 - Strongly Disagree</option>
@@ -74,7 +74,7 @@
                 <option value="5">5 - Strongly Agree</option>
             </select>
             <br><br>
-            <h5>Five</h5>
+            <h5>I am down to earth.</h5>
             <select data-placeholder="" class="chosen-select" id="q5">
                 <option value="">Choose an option</option>
                 <option value="1">1 - Strongly Disagree</option>
@@ -84,7 +84,7 @@
                 <option value="5">5 - Strongly Agree</option>
             </select>
             <br><br>
-            <h5>Six</h5>
+            <h5>I am easily entertained.</h5>
             <select data-placeholder="" class="chosen-select" id="q6">
                 <option value="">Choose an option</option>
                 <option value="1">1 - Strongly Disagree</option>
@@ -94,7 +94,7 @@
                 <option value="5">5 - Strongly Agree</option>
             </select>
             <br><br>
-            <h5>Seven</h5>
+            <h5>I'm naturally curious.</h5>
             <select data-placeholder="" class="chosen-select" id="q7">
                 <option value="">Choose an option</option>
                 <option value="1">1 - Strongly Disagree</option>
@@ -104,7 +104,7 @@
                 <option value="5">5 - Strongly Agree</option>
             </select>
             <br><br>
-            <h5>Eight</h5>
+            <h5>Honesty is important to me.</h5>
             <select data-placeholder="" class="chosen-select" id="q8">
                 <option value="">Choose an option</option>
                 <option value="1">1 - Strongly Disagree</option>
@@ -114,7 +114,7 @@
                 <option value="5">5 - Strongly Agree</option>
             </select>
             <br><br>
-            <h5>Nine</h5>
+            <h5>I am not easily upset.</h5>
             <select data-placeholder="" class="chosen-select" id="q9">
                 <option value="">Choose an option</option>
                 <option value="1">1 - Strongly Disagree</option>
@@ -124,7 +124,7 @@
                 <option value="5">5 - Strongly Agree</option>
             </select>
             <br><br>
-            <h5>Ten</h5>
+            <h5>I am a fast learner.</h5>
             <select data-placeholder="" class="chosen-select" id="q10">
                 <option value="">Choose an option</option>
                 <option value="1">1 - Strongly Disagree</option>
@@ -171,7 +171,7 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
-
+    <!-- submit survey inputs -->
     <script type="text/javascript">
         $("#submit").on("click", function (event) {
             event.preventDefault();
@@ -192,15 +192,14 @@
                 ]
             };
             // console.log('userInputs = ' + JSON.stringify(userInputs));
-
             $.post("/api/friends", userInputs).done(function (data) {
                 $("#matchName").text(data.matchName);
                 $("#matchImage").attr("src", data.matchImage);
 
-            }); $("#friendModal").modal("toggle");
+            });
+            $("#friendModal").modal("toggle");
         });
     </script>
-
 
 </body>
 
