@@ -153,7 +153,7 @@
                 </div>
                 <div class="modal-body">
                     <h4 id="matchName"></h4>
-                    <img id="matchImage" src="" alt="No Image">
+                    <img id="matchImage" src="" alt="No Image" width="450">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -175,7 +175,6 @@
     <script type="text/javascript">
         $("#submit").on("click", function (event) {
             event.preventDefault();
-            console.log("clicked");
             var userInputs = {
                 name: $("#name").val().trim(),
                 photo: $("#image").val().trim(),
@@ -192,7 +191,7 @@
                     $('#q10').val(),
                 ]
             };
-            console.log('userInputs = ' + JSON.stringify(userInputs));
+            // console.log('userInputs = ' + JSON.stringify(userInputs));
 
             $.post("/api/friends", userInputs).done(function (data) {
                 $("#matchName").text(data.matchName);
