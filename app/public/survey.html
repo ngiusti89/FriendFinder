@@ -21,6 +21,7 @@
         <div class="container">
             <h2>Lets Go!</h2>
             <br>
+            <!-- user inputs -->
             <h3>About You:</h3>
             <h5>Name:</h5>
             <input type="text" class="form-control" id="name" placeholder="Your Name">
@@ -29,6 +30,7 @@
             <input type="text" class="form-control" id="image" placeholder="Link to your photo">
         </div>
         <br>
+        <!-- survey inputs -->
         <div class="container">
             <h2>Questions:</h2>
             <br>
@@ -132,10 +134,44 @@
                 <option value="5">5 - Strongly Agree</option>
             </select>
             <br><br>
-            <p><a class="btn btn-primary btn-lg" role="button" id="submit">Submit</a></p>
+            <!-- submit button to input data & then open modal -->
+            <p><a class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal" role="button"
+                    id="submit">Submit</a></p>
+
         </div>
 
     </div>
+
+    <!-- modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="exampleModalLabel">Friend Match</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $("#submit").on("click", function(event) {
+            event.preventDefault();
+
+            var userInputs = {
+                
+            }
+        })
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
