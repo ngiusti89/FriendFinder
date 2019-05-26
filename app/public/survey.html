@@ -195,8 +195,8 @@
             console.log('userInputs = ' + JSON.stringify(userInputs));
 
             $.post("/api/friends", userInputs).done(function (data) {
-                $("#matchName").text(data.name);
-                $("#matchImage").attr("src", data.photo);
+                $("#matchName").text(data.matchName);
+                $("#matchImage").attr("src", data.matchImage);
 
             }); $("#friendModal").modal("toggle");
         });

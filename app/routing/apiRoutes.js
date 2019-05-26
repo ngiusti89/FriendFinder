@@ -24,11 +24,11 @@ module.exports = function (app) {
             for (var j = 0; j < newFriendScore.length; j++) {
                 scoreDiff += Math.abs(friends[i].scores[j] - newFriendScore[j])
             }
-            console.log('scoreDiff = ' + scoreDiff);
+            // console.log('scoreDiff = ' + scoreDiff);
 
             if (scoreDiff < totalDifference) {
-                console.log('Closest match found = ' + scoreDiff);
-                console.log('Friend name = ' + friends[i].name);
+                // console.log('Closest match found = ' + scoreDiff);
+                // console.log('Friend name = ' + friends[i].name);
                 
                 totalDifference = scoreDiff;
                 matchName = friends[i].name;
@@ -40,7 +40,7 @@ module.exports = function (app) {
 
         res.json({status: 'OK', matchName: matchName, matchImage: matchImage});
 
-        console.log('newFriend = ' + JSON.stringify(newFriendData));
+        // console.log('newFriend = ' + JSON.stringify(newFriendData));
 
     });
 };
