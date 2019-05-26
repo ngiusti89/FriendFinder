@@ -27,7 +27,7 @@ module.exports = function (app) {
             console.log('scoreDiff = ' + scoreDiff);
 
             if (scoreDiff < totalDifference) {
-                console.log('Closest match found = ' + diff);
+                console.log('Closest match found = ' + scoreDiff);
                 console.log('Friend name = ' + friends[i].name);
                 
                 totalDifference = scoreDiff;
