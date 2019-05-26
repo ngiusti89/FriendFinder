@@ -45,7 +45,7 @@
             </select>
             <br><br>
             <h5>Two</h5>
-            <select data-placeholder="" class="chosen-select" id="q1">
+            <select data-placeholder="" class="chosen-select" id="q2">
                 <option value="">Choose an option</option>
                 <option value="1">1 - Strongly Disagree</option>
                 <option value="2">2 - Disagree</option>
@@ -55,7 +55,7 @@
             </select>
             <br><br>
             <h5>Three</h5>
-            <select data-placeholder="" class="chosen-select" id="q1">
+            <select data-placeholder="" class="chosen-select" id="q3">
                 <option value="">Choose an option</option>
                 <option value="1">1 - Strongly Disagree</option>
                 <option value="2">2 - Disagree</option>
@@ -65,7 +65,7 @@
             </select>
             <br><br>
             <h5>Four</h5>
-            <select data-placeholder="" class="chosen-select" id="q1">
+            <select data-placeholder="" class="chosen-select" id="q4">
                 <option value="">Choose an option</option>
                 <option value="1">1 - Strongly Disagree</option>
                 <option value="2">2 - Disagree</option>
@@ -75,7 +75,7 @@
             </select>
             <br><br>
             <h5>Five</h5>
-            <select data-placeholder="" class="chosen-select" id="q1">
+            <select data-placeholder="" class="chosen-select" id="q5">
                 <option value="">Choose an option</option>
                 <option value="1">1 - Strongly Disagree</option>
                 <option value="2">2 - Disagree</option>
@@ -85,7 +85,7 @@
             </select>
             <br><br>
             <h5>Six</h5>
-            <select data-placeholder="" class="chosen-select" id="q1">
+            <select data-placeholder="" class="chosen-select" id="q6">
                 <option value="">Choose an option</option>
                 <option value="1">1 - Strongly Disagree</option>
                 <option value="2">2 - Disagree</option>
@@ -95,7 +95,7 @@
             </select>
             <br><br>
             <h5>Seven</h5>
-            <select data-placeholder="" class="chosen-select" id="q1">
+            <select data-placeholder="" class="chosen-select" id="q7">
                 <option value="">Choose an option</option>
                 <option value="1">1 - Strongly Disagree</option>
                 <option value="2">2 - Disagree</option>
@@ -105,7 +105,7 @@
             </select>
             <br><br>
             <h5>Eight</h5>
-            <select data-placeholder="" class="chosen-select" id="q1">
+            <select data-placeholder="" class="chosen-select" id="q8">
                 <option value="">Choose an option</option>
                 <option value="1">1 - Strongly Disagree</option>
                 <option value="2">2 - Disagree</option>
@@ -115,7 +115,7 @@
             </select>
             <br><br>
             <h5>Nine</h5>
-            <select data-placeholder="" class="chosen-select" id="q1">
+            <select data-placeholder="" class="chosen-select" id="q9">
                 <option value="">Choose an option</option>
                 <option value="1">1 - Strongly Disagree</option>
                 <option value="2">2 - Disagree</option>
@@ -125,7 +125,7 @@
             </select>
             <br><br>
             <h5>Ten</h5>
-            <select data-placeholder="" class="chosen-select" id="q1">
+            <select data-placeholder="" class="chosen-select" id="q10">
                 <option value="">Choose an option</option>
                 <option value="1">1 - Strongly Disagree</option>
                 <option value="2">2 - Disagree</option>
@@ -135,17 +135,15 @@
             </select>
             <br><br>
             <!-- submit button to input data & then open modal -->
-            <p><a class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal" role="button"
-                    id="submit">Submit</a></p>
+            <button class="btn btn-primary btn-lg" type="submit" id="submit">Submit</button>
 
         </div>
 
     </div>
 
     <!-- modal -->
-    <div class="modal fade" id="friendModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
+    <div class="modal fade" id="friendModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h3 class="modal-title" id="exampleModalLabel">Friend Match</h3>
@@ -155,7 +153,7 @@
                 </div>
                 <div class="modal-body">
                     <h4 id="matchName"></h4>
-                    <h4 id ="matchImage"></h4>
+                    <img id="matchImage" src="" alt="No Image">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -182,15 +180,16 @@
                     $('#q8').val(),
                     $('#q9').val(),
                     $('#q10').val(),
-                ],
+                ]
             };
+            console.log('userInputs = ' + JSON.stringify(userInputs));
 
             $.post("/api/friends", userInputs, function (data) {
                 $("#matchName").text(data.name);
                 $("#matchImage").attr("src", data.photo);
                 $("#friendModal").modal("toggle");
             });
-        })
+        });
     </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
